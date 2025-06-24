@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Falling Objects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>Catch the Objects!</h1>
+            <div class="stats">
+                <p>Skor: <span id="score">0</span></p>
+                <p>Nyawa: <span id="lives">3</span></p>
+            </div>
+        </div>
+
+        <div id="gameArea" class="game-area">
+            <div id="player" class="player"></div>
+            </div>
+
+        <div id="gameOverScreen" class="game-over-screen" style="display: none;">
+            <h2>GAME OVER!</h2>
+            <p>Skor Akhir: <span id="finalScore">0</span></p>
+            <button id="restartButton">Main Lagi</button>
+        </div>
+
+        <div id="startScreen" class="start-screen">
+            <h2>Tangkap Objek Jatuh</h2>
+            <p>Gerakkan keranjang (pemain) ke kiri dan kanan untuk menangkap objek yang jatuh.</p>
+            
+            <button id="startButton">Mulai Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
