@@ -1,0 +1,156 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #89cff0, #5dade2);
+    margin: 0;
+    color: #fff;
+    overflow: hidden;
+    /* Ensure font is loaded */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.game-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 5px solid #ffd700;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    /* Mobile-friendly adjustments */
+    width: 95vw; /* Use 95% of viewport width */
+    max-width: 400px; /* Still limit max width for larger screens */
+    height: 90vh; /* Use 90% of viewport height */
+    max-height: 650px; /* Adjust max height if needed, maintaining aspect ratio */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    /* Add a max-width to prevent it from getting too wide on very large screens */
+    /* Add a min-height for very small screens if content gets too squished */
+    min-height: 400px;
+}
+
+.header {
+    text-align: center;
+    padding: 2.5vw; /* Relative padding */
+    background-color: #333;
+    border-bottom: 2px solid #ffd700;
+}
+
+.header h1 {
+    margin: 0 0 1.5vw 0; /* Relative margin */
+    font-size: 5vw; /* Adjust font size based on viewport width */
+    /* Clamp the font size to prevent it from getting too big or small */
+    font-size: clamp(1.2em, 5vw, 1.8em);
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    font-size: 3.5vw; /* Relative font size */
+    font-size: clamp(0.9em, 3.5vw, 1.1em); /* Clamp for responsiveness */
+    font-weight: bold;
+}
+
+.stats span {
+    color: #ff4500;
+}
+
+.game-area {
+    flex-grow: 1;
+    position: relative;
+    background-color: #2c3e50;
+    overflow: hidden;
+}
+
+.player {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20vw; /* Player width relative to viewport */
+    max-width: 80px; /* Cap max width */
+    height: 20px;
+    background-color: #32cd32;
+    border: 2px solid #228b22;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(50,205,50,0.5);
+}
+
+.falling-object {
+    position: absolute;
+    top: 0;
+    width: 6vw; /* Object size relative to viewport */
+    height: 6vw; /* Object size relative to viewport */
+    max-width: 25px; /* Cap max width */
+    max-height: 25px; /* Cap max height */
+    background-color: #ff6347;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255,99,71,0.7);
+    transition: top linear;
+}
+
+/* Screen Overlay Styles */
+.start-screen, .game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    z-index: 10;
+    padding: 10px; /* Add some padding for smaller screens */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+.start-screen h2, .game-over-screen h2 {
+    font-size: 8vw; /* Relative font size */
+    font-size: clamp(1.5em, 8vw, 2.5em); /* Clamp for responsiveness */
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.start-screen p, .game-over-screen p {
+    font-size: 3.5vw; /* Relative font size */
+    font-size: clamp(0.8em, 3.5vw, 1em); /* Clamp for responsiveness */
+    margin-bottom: 25px;
+    max-width: 90%; /* Allow more width on smaller screens */
+    line-height: 1.4; /* Improve readability */
+}
+
+.start-screen button, .game-over-screen button {
+    background-color: #27ae60;
+    color: white;
+    padding: 3vw 6vw; /* Relative padding */
+    padding: clamp(10px, 3vw, 15px) clamp(20px, 6vw, 30px); /* Clamp padding */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 4.5vw; /* Relative font size */
+    font-size: clamp(1em, 4.5vw, 1.2em); /* Clamp for responsiveness */
+    font-family: 'Press Start 2P', cursive;
+    transition: background-color 0.3s ease;
+}
+
+.start-screen button:hover, .game-over-screen button:hover {
+    background-color: #218838;
+}
+
+#finalScore {
+    color: #ffd700;
+    font-size: 6vw; /* Relative font size */
+    font-size: clamp(1.2em, 6vw, 1.5em); /* Clamp for responsiveness */
+    font-weight: bold;
+}
